@@ -69,7 +69,7 @@ def main():
                         line += 1
                     else:
                         print("SLASH / null")
-                case ' ', '\t', '\r':
+                case ' ' | '\t' | '\r':
                     pass
                 case '\n':
                     line += 1
