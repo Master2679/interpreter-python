@@ -22,7 +22,9 @@ def main():
     # Uncomment this block to pass the first stage
     if file_contents:
         error = False
-        for c in file_contents:
+        i = 0
+        while i < len(file_contents):
+            c = file_contents[i]
             if c == '(':
                 print("LEFT_PAREN ( null")
             elif c == ')':
@@ -43,6 +45,26 @@ def main():
                 print("SEMICOLON ; null")
             elif c == '*':
                 print("STAR * null")
+            elif c == '!':
+                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                    print("BANG_EQUAL != null")
+                else:
+                    print("BANG ! null")
+            elif c == '=':
+                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                    print("EQUAL_EQUAL == null")
+                else:
+                    print("EQUAL = null")
+            elif c == '<':
+                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                    print("LESS_EQUAL <= null")
+                else:
+                    print("LESS < null")
+            elif c == '>':
+                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                    print("GREATER_EQUAL >= null")
+                else:
+                    print("GREATER > null")
             else:
                 print("[line 1] Error: Unexpected character: " + c, file=sys.stderr)
                 error = True
