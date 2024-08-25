@@ -74,6 +74,7 @@ def main():
                 case '\n':
                     line += 1
                 case _:
+                    print(c)
                     print(f"[line {line}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
             i += 1
