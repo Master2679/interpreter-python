@@ -43,11 +43,8 @@ def main():
                 print("SEMICOLON ; null")
             elif c == '*':
                 print("STAR * null")
-            elif c == '$':
-                print("[line 1] Error: Unexpected character: $", file=sys.stderr)
-                error = True
-            elif c == '#':
-                print("[line 1] Error: Unexpected character: #", file=sys.stderr)
+            else:
+                print("[line 1] Error: Unexpected character: " + c, file=sys.stderr)
                 error = True
 
 
