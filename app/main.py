@@ -23,9 +23,9 @@ def main():
     if file_contents:
         for c in file_contents:
             if c == '(':
-                print("LEFT_PAREN  ( null")
+                print("LEFT_PAREN ( null")
             elif c == ')':
-                print("RIGHT_PAREN  ) null")
+                print("RIGHT_PAREN ) null")
         print("EOF  null")
     else:
         print("EOF  null") # Placeholder, remove this line when implementing the scanner
