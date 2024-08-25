@@ -65,6 +65,7 @@ def main():
                     print("GREATER_EQUAL >= null")
                 else:
                     print("GREATER > null")
+            ++i
             else:
                 print("[line 1] Error: Unexpected character: " + c, file=sys.stderr)
                 error = True
