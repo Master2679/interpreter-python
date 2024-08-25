@@ -46,29 +46,33 @@ def main():
             elif c == '*':
                 print("STAR * null")
             elif c == '!':
-                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                if i + 1 < len(file_contents) and file_contents[i+1] == '=':
                     print("BANG_EQUAL != null")
+                    i += 1
                 else:
                     print("BANG ! null")
             elif c == '=':
-                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                if i + 1 < len(file_contents) and file_contents[i+1] == '=':
                     print("EQUAL_EQUAL == null")
+                    i += 1
                 else:
                     print("EQUAL = null")
             elif c == '<':
-                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                if i + 1 < len(file_contents) and file_contents[i+1] == '=':
                     print("LESS_EQUAL <= null")
+                    i += 1
                 else:
                     print("LESS < null")
             elif c == '>':
-                if i + 1 < len(file_contents) and file_contents[++i] == '=':
+                if i + 1 < len(file_contents) and file_contents[i+1] == '=':
                     print("GREATER_EQUAL >= null")
+                    i += 1
                 else:
                     print("GREATER > null")
             else:
                 print("[line 1] Error: Unexpected character: " + c, file=sys.stderr)
                 error = True
-            ++i
+            i += 1
 
                 
             
