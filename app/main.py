@@ -26,6 +26,24 @@ def main():
                 print("LEFT_PAREN ( null")
             elif c == ')':
                 print("RIGHT_PAREN ) null")
+            elif c == '{':
+                print("LEFT_BRACE { null")
+            elif c == '}':
+                print("RIGHT_BRACE } null")
+            elif c == ',':
+                print("COMMA , null")
+            elif c == '.':
+                print("DOT . null")
+            elif c == '-':
+                print("MINUS - null")
+            elif c == '+':
+                print("PLUS + null")
+            elif c == ';':
+                print("SEMICOLON ; null")
+            elif c == '*':
+                print("STAR * null")
+                
+            
         print("EOF  null")
     else:
         print("EOF  null") # Placeholder, remove this line when implementing the scanner
