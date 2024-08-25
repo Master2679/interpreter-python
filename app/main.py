@@ -21,6 +21,7 @@ def main():
 
     # Uncomment this block to pass the first stage
     if file_contents:
+        error = False
         for c in file_contents:
             if c == '(':
                 print("LEFT_PAREN ( null")
@@ -42,9 +43,19 @@ def main():
                 print("SEMICOLON ; null")
             elif c == '*':
                 print("STAR * null")
+            elif c == '$':
+                print("[line 1] Error: Unexpected character: $", file=sys.stderr)
+                error = True
+            elif c == '#':
+                print("[line 1] Error: Unexpected character: #", file=sys.stderr)
+                error = True
+
+
                 
             
         print("EOF  null")
+        if(error):
+            exit(65)
     else:
         print("EOF  null") # Placeholder, remove this line when implementing the scanner
 
