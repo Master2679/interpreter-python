@@ -80,7 +80,7 @@ def main():
                     print("SLASH / null")
 
             else:
-                print("[line " + line + "] Error: Unexpected character: " + c, file=sys.stderr)
+                print(f"[line {line} "] Error: Unexpected character: {c}", file=sys.stderr)
                 error = True
             i += 1
 
