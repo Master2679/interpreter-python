@@ -23,6 +23,7 @@ def main():
     if file_contents:
         error = False
         i = 0
+        line = 1
         while i < len(file_contents):
             c = file_contents[i]
             if c == '(':
@@ -69,8 +70,17 @@ def main():
                     i += 1
                 else:
                     print("GREATER > null")
+            elif c == '/':
+                if i + 1 < len(file_contents) and file_contents[i+1] == '/':
+                    i+=1
+                    while i < len(file_contents) and file_contents[i] != '\n':
+                        i+=1
+                    line += 1
+                else:
+                    print("SLASH / null")
+
             else:
-                print("[line 1] Error: Unexpected character: " + c, file=sys.stderr)
+                print("[line " + line + "] Error: Unexpected character: " + c, file=sys.stderr)
                 error = True
             i += 1
 
