@@ -86,7 +86,7 @@ def main():
                     else:
                         print(f"STRING {file_contents[i:j+1]} {file_contents[i+1:j]}")
                     i = j
-                case (c.isnumeric()):
+                case _ if c.isdigit():
                     j = i
                     while j < len(file_contents) and file_contents[j].isnumeric():
                         j += 1
