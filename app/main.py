@@ -87,14 +87,19 @@ def main():
                         print(f"STRING {file_contents[i:j+1]} {file_contents[i+1:j]}")
                     i = j
                 case _ if c.isdigit():
+                    decimal = False
                     j = i
                     while j < len(file_contents) and file_contents[j].isnumeric():
                         j += 1
                     if j < len(file_contents) and file_contents[j] == '.':
                         j += 1
                         while j < len(file_contents) and file_contents[j].isnumeric():
+                            decimal = True
                             j += 1
-                    print(f"NUMBER {file_contents[i:j]} {file_contents[i:j]}")
+                    if decimal:
+                        print(f"NUMBER {file_contents[i:j]} {float(file_contents[i:j])}")
+                    else:
+                        print(f"NUMBER {file_contents[i:j]} {file_contents[i:j]}.0")
                     i = j - 1
                 case _:
                     print(f"[line {line}] Error: Unexpected character: {c}", file=sys.stderr)
