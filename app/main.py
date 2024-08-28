@@ -73,6 +73,18 @@ def main():
                     pass
                 case '\n':
                     line += 1
+                case '"':
+                    j = i
+                    j += 1
+                    while j < len(file_contents) and file_contents[j] != '"':
+                        if file_contents[j] == '\n':
+                            line += 1
+                        j += 1
+                    if j == len(file_contents):
+                        print(f"[line {line}] Error: Unterminated string.", file=sys.stderr)
+                        error = True
+                    else:
+                        print(f"STRING \"{file_contents[i-1:i+1]}\" {file_contents[i:j+1]}")
                 case _:
                     print(f"[line {line}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
