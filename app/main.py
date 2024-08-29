@@ -103,7 +103,7 @@ def main():
                     i = j - 1
                 case '_' | _ if c.isalpha():
                     j = i
-                    while j < len(file_contents) and (file_contents[j].isalpha() or file_contents[j] == '_'):
+                    while j < len(file_contents) and (file_contents[j].isalnum() or file_contents[j] == '_'):
                         j += 1
                     print(f"IDENTIFIER {file_contents[i:j]} null")
                     i = j - 1
