@@ -101,7 +101,13 @@ def main():
                     else:
                         print(f"NUMBER {file_contents[i:j]} {file_contents[i:j]}.0")
                     i = j - 1
-                case '_' | _ if c.isalpha():
+                case '_':
+                    j = i
+                    while j < len(file_contents) and (file_contents[j].isalnum() or file_contents[j] == '_'):
+                        j += 1
+                    print(f"IDENTIFIER {file_contents[i:j]} null")
+                    i = j - 1
+                case _ if c.isalpha():
                     j = i
                     while j < len(file_contents) and (file_contents[j].isalnum() or file_contents[j] == '_'):
                         j += 1
