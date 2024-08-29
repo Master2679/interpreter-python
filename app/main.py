@@ -101,6 +101,12 @@ def main():
                     else:
                         print(f"NUMBER {file_contents[i:j]} {file_contents[i:j]}.0")
                     i = j - 1
+                case _ if c.isalpha():
+                    j = i
+                    while j < len(file_contents) and file_contents[j].isalpha():
+                        j += 1
+                    print(f"INDENTIFIER {file_contents[i:j+1]} null")
+                    
                 case _:
                     print(f"[line {line}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
