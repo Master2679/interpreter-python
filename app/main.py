@@ -106,7 +106,7 @@ def main():
                     while j < len(file_contents) and file_contents[j].isalpha():
                         j += 1
                     print(f"IDENTIFIER {file_contents[i:j]} null")
-                    
+                    i = j - 1
                 case _:
                     print(f"[line {line}] Error: Unexpected character: {c}", file=sys.stderr)
                     error = True
